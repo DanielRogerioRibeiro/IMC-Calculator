@@ -63,7 +63,23 @@ b_gerar_senha.grid(row=4, column=0,  sticky=NSEW, pady=60, padx=5, columnspan=30
 
 
 
+def calcular():
+    peso = float(e_peso.get())
+    altura = float(e_altura.get())**2
+    resultado = peso/altura
+    
+    if resultado < 18.6:
+        l_resultado_texto['text'] = "Seu IMC é: Abaixo do peso"
+    elif resultado >= 18.5 and resultado < 24.9:
+        l_resultado_texto['text'] = "Seu IMC é: Normal"
+    elif resultado >=25 and resultado < 29.9:
+        l_resultado_texto['text'] ="Seu IMC é: Sobrepeso"
+    else:
+        l_resultado_texto['text'] = "Seu IMC é: Obesidade"
+        
+    l_resultado['text'] = "{:.{}f}".format( resultado, 2 )
 
+    
 
 
 
