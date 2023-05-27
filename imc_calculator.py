@@ -56,12 +56,6 @@ l_resultado_texto = Label(frame_baixo , width=37, text="", height=1, padx=0, pad
 l_resultado_texto.place(x=0, y=85)
  
  
-# ------------ Botao calcular ------------------
- 
-b_calcular = Button(frame_baixo, text="Calcular",width=34, height=1, overrelief=SOLID,  bg=co2, fg="white", font=('Ivy 10 bold'), anchor="center", relief=RAISED )
-b_gerar_senha.grid(row=4, column=0,  sticky=NSEW, pady=60, padx=5, columnspan=30)
-
-
 
 def calcular():
     peso = float(e_peso.get())
@@ -78,6 +72,8 @@ def calcular():
         l_resultado_texto['text'] = "Seu IMC é: Obesidade"
         
     l_resultado['text'] = "{:.{}f}".format( resultado, 2 )
+
+# ------------ Botao calcular ------------------
 
 b_calcular = Button(frame_baixo,command=calcular, text="Calcular",width=34, height=1, overrelief=SOLID,  bg=co2, fg="white", font=('Ivy 10 bold'), anchor="center", relief=RAISED )
 b_calcular.grid(row=4, column=0,  sticky=NSEW, pady=60, padx=5, columnspan=30)
